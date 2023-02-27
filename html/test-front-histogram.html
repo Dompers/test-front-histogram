@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Test front histogram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.0/nouislider.min.css">
+    <link href="assets/css/style-test-front-histogram.css" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <div class="ranges" id="ranges">
+        <div class="ranges-wrapper">
+          <div class="ranges-calc">
+            <div class="range-calc-item">
+              <div>Storage:&nbsp;&nbsp;&nbsp;<span id="range-storage-number"></span></div>
+              <div>
+                <div id="range-storage"></div>
+              </div>
+            </div>
+            <div class="range-calc-item">
+              <div>Transfer:&nbsp;&nbsp;&nbsp;<span id="range-transfer-number"></span></div>
+              <div>
+                <div id="range-transfer"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ranges-histogram">
+            <div class="ranges-histogram-inner">
+              <div class="ranges-histogram-block">
+                <div class="ranges-histogram-item" id="backblaze"><span class="range"><span class="price">0$</span></span></div>
+                <div class="ranges-histogram-item" id="bunny"><span class="range"><span class="price">0$</span></span></div>
+                <div class="ranges-histogram-item" id="scaleway"><span class="range"><span class="price">0$</span></span></div>
+                <div class="ranges-histogram-item" id="vultr"><span class="range"><span class="price">0$</span></span></div>
+              </div>
+              <div class="ranges-histogram-logos">
+                <div class="ranges-logo" data-range-name="backblaze">
+                  <div class="ranges-logo-header">
+                    <div class="name">backblaze</div>
+                    <div class="type"></div>
+                  </div>
+                  <div class="ranges-logo-icon"><span class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 1024 1024">
+                        <circle cx="512" cy="512" r="512" style="fill:#e41e2a"></circle>
+                        <path d="M450.77 205.55s85.35 74.82 73.92 141c-5.15 29.87-44.43 78.25-23.22 124.55 22.85 49.88 34.72 146.13-68.1 121.26-101.37-24.3-93.56-148.7-18.22-214.03s50.55-139.56 35.62-172.78zM528.65 430c-5.67 50.48 50.18 100.8 5.75 169.2C504 646.54 551 713.14 611.68 701c66.31-13.22 83-55.18 81.24-103.94-2.31-61.9-27-79.15-81.69-125.59-59.44-50.18-13.66-145.38-13.66-145.38S535.22 374.45 528.65 430zM350.49 651.31c11.87 33.3 30.24 86.69 102.89 113.79 61.15 22.92 146.8 27 196.15-36.29 11.35-14.19-3.58-8.66-18.52-3a119.47 119.47 0 0 1-111.47-21.41c-42-35-25.61-74.22-46.67-74.67-69.44-1.49-105.66-28.6-124.4-51.67-4.25-5.44-10.82 37.34 2.02 73.25z" style="fill:#fff"></path>
+                      </svg></span></div>
+                </div>
+                <div class="ranges-logo" data-range-name="bunny">
+                  <div class="ranges-logo-header">
+                    <div class="name">bunny</div>
+                    <div class="type">
+                      <label>
+                        <input id="bunnyHDD" type="radio" name="range-bunny" value="HDD">HDD
+                      </label>
+                      <label>
+                        <input id="bunnySDD" type="radio" name="range-bunny" value="SDD" checked="checked">SDD
+                      </label>
+                    </div>
+                  </div>
+                  <div class="ranges-logo-icon"><span class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 90 90">
+                        <defs>
+                          <lineargradient id="a" x1="-33.94%" x2="153.69%" y1="50.041%" y2="50.041%">
+                            <stop stop-color="#FBAA19" offset="0"></stop>
+                            <stop stop-color="#EF3E23" offset="1"></stop>
+                          </lineargradient>
+                          <lineargradient id="b" x1="32.891%" x2="67.113%" y1="96.667%" y2="3.111%">
+                            <stop stop-color="#F78D1E" offset="0"></stop>
+                            <stop stop-color="#F37121" offset="1"></stop>
+                          </lineargradient>
+                          <lineargradient id="c" x1="14.403%" x2="63.227%" y1="75.177%" y2="12.448%">
+                            <stop stop-color="#FEBE2D" offset="0"></stop>
+                            <stop stop-color="#F04E23" offset="1"></stop>
+                          </lineargradient>
+                          <lineargradient id="d" x1="69.88%" x2="33.101%" y1="3.213%" y2="81.581%">
+                            <stop stop-color="#EA4425" offset="0"></stop>
+                            <stop stop-color="#FDBB27" offset="1"></stop>
+                          </lineargradient>
+                          <lineargradient id="e" x1="-40.127%" x2="144.71%" y1="49.989%" y2="49.989%">
+                            <stop stop-color="#F47920" offset="0"></stop>
+                            <stop stop-color="#E93825" offset="1"></stop>
+                          </lineargradient>
+                          <lineargradient id="f" x1="-143.23%" x2="243.36%" y1="49.917%" y2="49.917%">
+                            <stop stop-color="#FDCA0B" offset="0"></stop>
+                            <stop stop-color="#F5841F" offset="1"></stop>
+                          </lineargradient>
+                          <lineargradient id="g" x1="39.677%" x2="63.887%" y1="-25.013%" y2="131.61%">
+                            <stop stop-color="#E73C25" offset="0"></stop>
+                            <stop stop-color="#FAA21B" offset="1"></stop>
+                          </lineargradient>
+                          <lineargradient id="h" x1="-562.99%" x2="562.9%" y1="49.998%" y2="49.998%">
+                            <stop stop-color="#FDBA12" offset="0"></stop>
+                            <stop stop-color="#F7921E" offset="1"></stop>
+                          </lineargradient>
+                          <lineargradient id="i" x1="1.983%" x2="106.17%" y1="41.501%" y2="60.044%">
+                            <stop stop-color="#FEBE2D" offset="0"></stop>
+                            <stop stop-color="#F04E23" offset="1"></stop>
+                          </lineargradient>
+                        </defs>
+                        <g fill="none" fill-rule="evenodd">
+                          <path d="M44.056 14.371l20.706 11.245L45.629.001a14.266 14.266 0 00-1.573 14.371z" fill="url(#a)" transform="translate(5)"></path>
+                          <path d="M34.699 56.077a4.72 4.72 0 110 9.44 4.72 4.72 0 010-9.44z" fill="url(#b)" transform="translate(5)"></path>
+                          <path d="M20.287 3.755l57.986 31.47a2.811 2.811 0 010 5.055A45.085 45.085 0 0164.07 45.82L52.007 70.574s-3.818 8.685-14.329 5.35c4.406-4.406 9.734-8.392 9.734-15.169 0-7.033-5.701-12.734-12.734-12.734s-12.734 5.702-12.734 12.734c0 8.853 8.728 12.587 13.573 18.734a7.972 7.972 0 01-.692 10.05C28.804 83.58 17.161 73.53 12.377 66.943a19.09 19.09 0 01-4.09-11.643 21.922 21.922 0 0115.482-19.846 25.28 25.28 0 018.14-.986 26.391 26.391 0 0110.909 3.294c5.14 3.021 7.636 2.224 11.182-.755 2.098-1.72 4.385-7.322.84-8.623a25.469 25.469 0 00-3.546-.88c-6.588-1.28-18.105-2.497-22.343-4.91-6.735-3.713-11.266-11.37-8.665-18.839z" fill="url(#c)" transform="translate(5)"></path>
+                          <path d="M47.308 60.818c2.685-14.119-11.643-27.587-22.636-25.573l.734-.168c-.587.126-1.154.273-1.699.44A21.924 21.924 0 008.224 55.365a19.09 19.09 0 004.196 11.643c4.783 6.587 16.427 16.636 22.448 22.594a7.972 7.972 0 00.692-10.05c-4.95-6.125-13.678-9.88-13.678-18.712 0-7.033 5.701-12.734 12.734-12.734S47.35 53.806 47.35 60.839l-.042-.021z" fill="url(#d)" transform="translate(5)"></path>
+                          <path d="M20.287 3.755l44.056 24 1.259.693c1.049.818 2.098 2.454.734 5.475-2.098 4.51-10.49 8.874-20.161 5.455 3.021.88 5.077-.126 7.72-2.35 2.098-1.72 4.385-7.322.84-8.623a25.469 25.469 0 00-3.546-.88c-6.587-1.28-18.105-2.497-22.343-4.91-6.63-3.734-11.161-11.392-8.56-18.86z" fill="url(#e)" transform="translate(5)"></path>
+                          <path d="M20.287 3.755c4.552 16.783 32.266 18.168 46.154 25.175L20.287 3.755z" fill="url(#f)" transform="translate(5)"></path>
+                          <path d="M35.455 79.552c-4.846-6.126-13.573-9.881-13.573-18.713a12.734 12.734 0 0111.161-12.587c-10.124.035-18.322 8.233-18.357 18.357-.002 1.24.124 2.478.378 3.692 4.007 4.532 9.797 9.881 14.685 14.413a273.549 273.549 0 015.119 4.888 8.77 8.77 0 002.097-4.972 7.678 7.678 0 00-1.51-5.076z" fill="url(#g)" transform="translate(5)"></path>
+                          <path d="M47.245 62.329c.066-.5.101-1.005.105-1.51 2.643-14.12-11.685-27.588-22.678-25.574a26.203 26.203 0 017.175-.713c14.413.588 18.44 15.986 15.399 27.797z" fill="url(#h)" transform="translate(5)"></path>
+                          <path d="M4.741 31.133a4.762 4.762 0 014.742 4.762v4.741H4.74A4.741 4.741 0 010 35.897c0-2.623 2.12-4.751 4.741-4.763z" fill="url(#i)" transform="translate(5)"></path>
+                        </g>
+                      </svg></span></div>
+                </div>
+                <div class="ranges-logo" data-range-name="scaleway">
+                  <div class="ranges-logo-header">
+                    <div class="name">scaleway</div>
+                    <div class="type">
+                      <label>
+                        <input id="scalewayMulti" type="radio" name="range-scaleway" value="Multi" checked="checked">Multi
+                      </label>
+                      <label>
+                        <input id="scalewaySingle" type="radio" name="range-scaleway" value="Single">Single
+                      </label>
+                    </div>
+                  </div>
+                  <div class="ranges-logo-icon"><span class="icon">
+                      <svg width="1024px" height="1024px" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="512" cy="512" r="512" style="fill:#4f0599"></circle>
+                        <path d="M610.2 493v122c-.7 18.4-14.6 33.7-32.9 36.1H492c-14.3-1.1-25.9-11.9-27.9-26-.1-1.3-.1-2.6 0-3.8.1-16.1 13.2-29 29.2-29h37.1c11.8 0 21.3-9.6 21.3-21.3v-77.2c-.1-14.7 10.6-27.3 25.2-29.7h3.6c16.1-.2 29.4 12.7 29.7 28.8v.1zm-137.8 37.1v-76.6c0-11.8 9.6-21.3 21.3-21.3h39.5c16.1 0 29.2-13.1 29.2-29.2.1-1.2.1-2.4 0-3.6-2.6-14.7-15.2-25.4-30.1-25.6h-84.5c-18.2 2.3-32.3 17.1-33.7 35.4v121.6c0 16.1 13.1 29.2 29.2 29.2h4.5c14.5-2.6 24.9-15.2 24.6-29.9zm256-91.5v244c-5.3 46-42.4 81.8-88.5 85.3H478.2c-100.9-.1-182.6-81.9-182.6-182.8V352.9c0-53.5 43.4-96.9 96.9-96.9h153.2c100.9 0 182.6 81.8 182.6 182.6h.1zm-58.4 0c-.1-68.5-55.6-124-124.2-124.2H392.4c-21.1-.1-38.3 16.9-38.4 38v232.7c.4 68.4 55.8 123.6 124.2 123.7h158.7c16.7-2.1 30.1-15 32.9-31.6l.2-238.6z" style="fill:#fff"></path>
+                      </svg></span></div>
+                </div>
+                <div class="ranges-logo" data-range-name="vultr">
+                  <div class="ranges-logo-header">
+                    <div class="name">vultr</div>
+                    <div class="type"></div>
+                  </div>
+                  <div class="ranges-logo-icon"><span class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewbox="0 0 1024 1024">
+                        <circle cx="512" cy="512" r="512" style="fill:#007bfc"></circle>
+                        <path d="M259.9 357.4c-2.5-3.9-3.9-8.6-3.9-13.6 0-14.1 11.5-25.6 25.6-25.6h131.1c9.1 0 17.1 4.8 21.7 12l181.9 288.5c2.5 4 3.9 8.6 3.9 13.6s-1.5 9.7-3.9 13.6l-65.6 104c-4.5 7.2-12.5 12-21.7 12-9.1 0-17.1-4.8-21.7-12L259.9 357.4zm395.3 158.1c4.5 7.2 12.5 11.9 21.7 11.9 9.1 0 17.1-4.8 21.7-11.9l22.6-35.8 43-68.2c2.5-3.9 3.9-8.6 3.9-13.7 0-5-1.5-9.7-3.9-13.7L730.1 330c-4.5-7.2-12.5-12-21.7-12H577.1c-14.1 0-25.6 11.5-25.6 25.6 0 5 1.4 9.7 3.9 13.6l99.8 158.3z" style="fill:#fff"></path>
+                      </svg></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.0/nouislider.min.js"></script>
+    <script src="assets/js/app-test-front-histogram.js"></script>
+  </body>
+</html>

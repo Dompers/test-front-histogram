@@ -1,0 +1,237 @@
+.noUi-horizontal {
+    height: 3px;
+}
+
+.noUi-target {
+    border-radius: 0;
+    border: 1px solid #000;
+}
+
+.noUi-touch-area,
+.noUi-connects {
+    background: #000;
+}
+
+.noUi-marker-large {
+    background: #000;
+}
+
+.noUi-pips {
+    color: #000;
+}
+
+.noUi-marker-horizontal.noUi-marker-large {
+    top: -8px;
+}
+
+.noUi-pips-horizontal {
+    height: 24px;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 9px;
+    height: 17px;
+    right: -1px;
+    top: -8px;
+    border: 1px solid #000;
+    border-radius: 0;
+}
+
+.noUi-horizontal .noUi-handle:before, .noUi-horizontal .noUi-handle:after {
+    display: none;
+}
+
+.noUi-pips-horizontal {
+    padding: 0;
+}
+
+.noUi-marker-normal {
+    display: none;
+}
+
+.ranges-calc {
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.ranges-calc .range-calc-item > div {
+    margin-bottom: 20px;
+}
+
+.ranges-wrapper {
+    padding: 16px;
+}
+
+.ranges-histogram {
+    width: 500px;
+    max-width: 100%;
+}
+
+.ranges-histogram .ranges-histogram-inner {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto 1fr;
+    gap: 15px;
+}
+
+.ranges-histogram .ranges-histogram-inner .ranges-histogram-logos {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: repeat(4, 1fr);
+    -webkit-box-ordinal-group: 1;
+    -webkit-order: 0;
+       -moz-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+}
+
+.ranges-histogram .ranges-histogram-inner .ranges-histogram-logos .ranges-logo {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr auto;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.ranges-histogram .ranges-histogram-inner .ranges-histogram-logos .ranges-logo .ranges-logo-icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.ranges-histogram .ranges-histogram-inner .ranges-histogram-logos .ranges-logo .ranges-logo-icon .icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.ranges-histogram .ranges-histogram-inner .ranges-histogram-logos .ranges-logo .ranges-logo-icon .icon svg {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: antiquewhite;
+}
+
+.ranges-histogram .ranges-histogram-inner .ranges-histogram-block {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+       -moz-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, 1fr);
+    border-left: 3px solid #000;
+}
+
+.ranges-histogram .ranges-histogram-inner .ranges-histogram-block .ranges-histogram-item {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.ranges-histogram .ranges-histogram-inner .ranges-histogram-block .ranges-histogram-item .range {
+    width: 0;
+    height: 100%;
+    background: #ccc;
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.ranges-histogram .ranges-histogram-inner .ranges-histogram-block .ranges-histogram-item .range .price {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+       -moz-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+         -o-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    font-weight: bold;
+    padding: 10px;
+}
+
+@media screen and (max-width: 525px) {
+    .ranges-wrapper {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: column-reverse;
+           -moz-box-orient: vertical;
+           -moz-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        gap: 30px;
+    }
+    .ranges-calc {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: initial;
+    }
+    .ranges-histogram .ranges-histogram-inner {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-rows: -moz-calc(100vw - 48px) 1fr;
+        grid-template-rows: calc(100vw - 48px) 1fr;
+    }
+    .ranges-histogram .ranges-histogram-inner .ranges-histogram-block {
+        -webkit-transform: rotate(-90deg);
+           -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+             -o-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+        width: 100%;
+    }
+    .ranges-histogram .ranges-histogram-inner .ranges-histogram-logos {
+        -webkit-box-ordinal-group: 2;
+        -webkit-order: 1;
+           -moz-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: initial;
+    }
+    .ranges-histogram .ranges-histogram-inner .ranges-histogram-logos .ranges-logo {
+        grid-template-rows: auto 1fr;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+           -moz-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+    }
+    .ranges-histogram .ranges-histogram-inner .ranges-histogram-logos .ranges-logo .ranges-logo-icon {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+           -moz-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        text-align: center;
+    }
+    .ranges-histogram .ranges-histogram-inner .ranges-histogram-logos .ranges-logo .ranges-logo-header {
+        -webkit-box-ordinal-group: 2;
+        -webkit-order: 1;
+           -moz-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+        text-align: center;
+    }
+}
